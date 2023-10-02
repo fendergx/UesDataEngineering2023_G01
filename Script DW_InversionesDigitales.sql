@@ -4,20 +4,6 @@ go
 use DW_InversionesDigitales
 go
 
-create table DimProducto(
-ProductoKey int identity(1,1) not null primary key, --Llave surrogada
-ProductoId int not null, --Llave de negocio
-Nombre varchar(255),
-Categoria varchar(255),
-PrecioProducto decimal(8,2),
-CostoProducto decimal(8,2),
-UnidadesExistenciaProducto decimal(8,2),
-TotalCostoProducto decimal(8,2),
-TotalPrecioVentaProducto decimal(8,2),
-EstadoProducto varchar(50)
-)
-go
-
 create table DimFecha (
 FechaKey int not null primary key, --Llave surrogada
 Fecha smalldatetime not null, --Llave de negocio
@@ -60,7 +46,6 @@ go
 -- *****************FACT TABLE:Transacciones Financieras *********************
 
 create table FactTransaccionFinanciera(
-ProductoKey int not null,
 FechaKey int not null,
 CuentaKey int not null,
 Sucursalkey int not null,
@@ -79,13 +64,10 @@ go
 
 --Llave primaria para FactTransaccionFinanciera
 alter table FactTransaccionFinanciera add constraint TransaccionFinancieraPK primary key
-(ProductoKey, FechaKey, CuentaKey, SucursalKey)
+(FechaKey, CuentaKey, SucursalKey)
 go
 
 --Llaves foraneas para FactTransaccionFinanciera
-alter table FactTransaccionFinanciera add constraint Producto_Transaccion_Financiera foreign key
-(ProductoKey) references DimProducto(ProductoKey)
-go
 
 alter table FactTransaccionFinanciera add constraint Fecha_Transaccion_Financiera foreign key
 (FechaKey) references DimFecha(FechaKey)
