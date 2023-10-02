@@ -28,6 +28,7 @@ create table DimCuenta(
 CuentaKey int identity(1,1) not null primary key, --Llave surrogada
 CuentaId int not null,  --Llave de negocio
 CodigoCuenta int,
+CodigoCuentaPadre int,
 NombreCuenta varchar(250),
 TipoCuenta varchar(150),
 GrupoCuenta varchar(150),
@@ -51,12 +52,10 @@ CuentaKey int not null,
 Sucursalkey int not null,
 NumeroTransaccion int,
 NumeroTransaccionDetalle int,
-MontoIngreso decimal(8,2),
-MontoEgreso decimal(8,2),
-Balance decimal(8,2),
-Impuesto decimal(8,2),
-MontoAntesImpuesto decimal(8,2),
-MontoDespuesImpuesto decimal(8,2)
+MontoCargo decimal(8,2),
+MontoAbono decimal(8,2),
+SaldoInicial decimal(8,2),
+SaldoFinal decimal(8,2)
 )
 go
 
