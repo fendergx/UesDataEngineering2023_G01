@@ -37,4 +37,4 @@ $$ LANGUAGE plpgsql;
 --SELECT calcularSaldosDiarios();
 --SELECT calcularSaldosDiarios(null);
 --caso ideal
---sSELECT calcularSaldosDiarios('2023-07-09');
+--SELECT calcularSaldosDiarios('2023-07-09');
