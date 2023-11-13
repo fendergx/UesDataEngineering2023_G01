@@ -10,6 +10,7 @@ CREATE TABLE public.dw_account_order (
 	has_parent boolean,
 	account_parent_id int4 null,
 	account_parent_code varchar(64),
+    created_at timestamp default now(),
 	CONSTRAINT dw_account_order_pk PRIMARY KEY (id)
 );
 -- public.dw_account_sum foreign keys
