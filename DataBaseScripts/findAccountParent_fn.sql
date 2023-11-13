@@ -18,11 +18,12 @@ BEGIN
     sub4 := LEFT(codigo_inicial, LENGTH(codigo_inicial) - 3) || '000';
     sub3 := LEFT(codigo_inicial, LENGTH(codigo_inicial) - 4) || '0000';
     sub2 := LEFT(codigo_inicial, LENGTH(codigo_inicial) - 5) || '00000';
+    --valida si el codigo existe en el catalogo y es diferente del codigo recibido
 	IF EXISTS (SELECT 1 FROM account_account WHERE code = sub6 and code!=codigo_inicial) THEN
-	    	RETURN '1sub5';
+	    	RETURN sub6;
 		END IF;
 	IF EXISTS (SELECT 1 FROM account_account WHERE code = sub5 and code!=codigo_inicial) THEN
-	    	RETURN '1sub5';
+	    	RETURN sub5;
 		END IF;
 	IF EXISTS (SELECT 1 FROM account_account WHERE code = sub4 and code!=codigo_inicial) THEN
 	    	RETURN sub4;
