@@ -12,7 +12,7 @@ CREATE TABLE public.dw_account_order (
 	account_parent_code varchar(64),
 	CONSTRAINT dw_account_order_pk PRIMARY KEY (id)
 );
--- public.fact_finanzas foreign keys
+-- public.dw_account_sum foreign keys
 ALTER TABLE public.dw_account_order ADD CONSTRAINT dw_account_order_company_id_fkey FOREIGN KEY (company_id) REFERENCES public.res_company(id) ON DELETE RESTRICT;
 ALTER TABLE public.dw_account_order ADD CONSTRAINT dw_account_order_account_id_fkey FOREIGN KEY (account_id) REFERENCES public.account_account(id) ON DELETE RESTRICT;
 ALTER TABLE public.dw_account_order ADD CONSTRAINT dw_account_order_account_parent_id_fkey FOREIGN KEY (account_parent_id) REFERENCES public.account_account(id) ON DELETE RESTRICT;
