@@ -1,4 +1,4 @@
---funcion que recibe de parametro un codigo de cuenta y retorna el codigo de cuenta padre si existe, sino retorna 0.
+--funcion que recibe de parametro un codigo de cuenta y retorna el codigo de cuenta padre si existe, sino retorna 0. se requiere la tabla dw_account_order
 CREATE OR REPLACE FUNCTION findAccountParent(codigo_inicial VARCHAR, company INTEGER) RETURNS VARCHAR AS $$
 DECLARE
     primer_digito VARCHAR;

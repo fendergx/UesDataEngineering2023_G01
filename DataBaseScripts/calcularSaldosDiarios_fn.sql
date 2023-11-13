@@ -1,3 +1,4 @@
+--funcion para calcular saldos diarios, se requiere la tabla dw_account_sum
 CREATE OR REPLACE FUNCTION calcularSaldosDiarios(fecha_consulta DATE DEFAULT NULL) RETURNS BOOLEAN AS $$
 BEGIN
     -- Verificar si la fecha proporcionada es válida
@@ -17,10 +18,10 @@ BEGIN
     )
     SELECT * FROM DatosConsulta;
     --limpiando informacion vieja
-    DELETE FROM fact_finanzas WHERE fecha = fecha_consulta;
-   -- SELECT pg_catalog.setval('fact_finanzas_id_seq', (SELECT max(id) FROM fact_finanzas), true);
+    DELETE FROM dw_account_sum WHERE fecha = fecha_consulta;
+   -- SELECT pg_catalog.setval('dw_account_sum_id_seq', (SELECT max(id) FROM dw_account_sum), true);
     -- Insertar datos calculados en la tabla de destino desde la tabla temporal
-    INSERT INTO fact_finanzas (fecha, id_empresa, id_cuenta, credito,debito,balance)
+    INSERT INTO dw_account_sum (fecha, id_empresa, id_cuenta, credito,debito,balance)
     SELECT *
     FROM tablaTemporal;
     -- Verificar si se insertaron filas correctamente

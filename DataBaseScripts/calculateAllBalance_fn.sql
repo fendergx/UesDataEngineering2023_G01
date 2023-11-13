@@ -1,4 +1,4 @@
---funcion para calcular los balances de todas las cuentas de todas las empresas, para todas las fechas existentes en los registros.s
+--funcion para calcular los balances de todas las cuentas de todas las empresas, para todas las fechas existentes en los registros.
 --requiere la funcion CalcularSaldosDiarios()
 CREATE OR REPLACE FUNCTION calculateAllBalance() RETURNS BOOLEAN AS $$
 DECLARE
