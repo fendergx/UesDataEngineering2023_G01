@@ -10,7 +10,7 @@ CREATE TABLE public.dw_account_order (
 	has_parent boolean,
 	account_parent_id int4 null,
 	account_parent_code varchar(64),
-	CONSTRAINT dw_account_order PRIMARY KEY (id)
+	CONSTRAINT dw_account_order_pk PRIMARY KEY (id)
 );
 -- public.fact_finanzas foreign keys
 ALTER TABLE public.dw_account_order ADD CONSTRAINT dw_account_order_company_id_fkey FOREIGN KEY (company_id) REFERENCES public.res_company(id) ON DELETE RESTRICT;
