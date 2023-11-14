@@ -1,4 +1,4 @@
--- DROP TABLE IF EXIST public.dw_account_sum;
+-- DROP TABLE public.dw_account_sum;
 CREATE TABLE public.dw_account_sum (
 	id serial4 NOT NULL,
 	fecha date NOT NULL,
@@ -7,6 +7,7 @@ CREATE TABLE public.dw_account_sum (
 	credito numeric NULL,
 	debito numeric NULL,
 	balance numeric NULL,
+	created_at timestamp default now(),
 	CONSTRAINT dw_account_sum_pk PRIMARY KEY (id)
 );
 -- public.dw_account_sum foreign keys
