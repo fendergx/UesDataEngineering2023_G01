@@ -8,7 +8,7 @@ DECLARE
     query_text TEXT;
 BEGIN
     --borrar la informacion para limpiar
-    DELETE FROM dw_account_order where id IN (SELECT id FROM dw_account_order);
+    DELETE FROM dw_account_order;
     ALTER SEQUENCE public.dw_account_order_id_seq RESTART 1;
     -- Construir la nueva consulta para obtener la lista de fechas
     query_text := 'SELECT id,code,company_id FROM account_account ORDER BY id ASC';
