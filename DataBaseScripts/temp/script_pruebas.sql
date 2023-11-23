@@ -18,3 +18,10 @@ select findAccountParent('101000',1);
 --100000 - 3
 --100000 - 2
 select calculateAllParents();
+
+/* PRUEBAS DE IMPUESTOS IVA */
+--los resumen de impuestos estan en account_move
+--movimientos de Taxes recibidos (Venta IVA 13%)
+select * from account_move_line where account_id in (select id from account_account where code in ('251000'));
+--movimientos de Taxes recibidos (Compra IVA 13%)
+select * from account_move_line where account_id in (select id from account_account where code in ('131000'));
