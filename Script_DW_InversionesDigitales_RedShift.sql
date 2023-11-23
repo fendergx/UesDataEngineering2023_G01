@@ -18,7 +18,7 @@ CREATE TABLE dimcuenta(
         cuentaId int distkey,
         codigoCuenta int,
         nombreCuenta varchar(250),
-        codigoCuentaPadre int,
+        --codigoCuentaPadre int,
         tipoCuenta varchar(150),
         grupoCuenta varchar(150),
         descripcionCuenta varchar(150)
@@ -27,7 +27,7 @@ CREATE TABLE dimcuenta(
 --dimension de fecha
 CREATE TABLE dimfecha(
     fechakey int PRIMARY KEY distkey, --formato iso
-    fecha date,
+    fecha varchar(10),
     dia varchar(25),
     diaNumeroSemana int,
     diaNumeroMes int,
