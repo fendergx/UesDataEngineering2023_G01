@@ -11,17 +11,19 @@ BEGIN
     -- Crear una tabla temporal utilizando una consulta con WITH
     CREATE TEMPORARY TABLE tablaTemporal AS
     WITH DatosConsulta AS (
-        SELECT date,company_id,account_id, SUM(credit) AS credito ,SUM(debit) AS debito,SUM(balance) AS balance
-	    FROM account_move_line 
+        SELECT t01.date,t01.company_id,t03.name AS company_name,t01.account_id,t02.code AS account_code,t02.name AS account_name, SUM(t01.credit) AS credito ,SUM(t01.debit) AS debito,SUM(t01.balance) AS balance
+	    FROM account_move_line AS t01
+	    INNER JOIN account_account AS t02 ON t01.account_id  = t02.id
+	    INNER JOIN res_company AS t03 ON t01.company_id = t03.id
 	    WHERE date = fecha_consulta
-	    GROUP BY date,company_id,account_id ORDER BY company_id,account_id ASC
+	    GROUP BY date,t01.company_id,t03.name,t01.account_id,t02.code,t02.name ORDER BY t01.company_id,t01.account_id ASC
     )
     SELECT * FROM DatosConsulta;
     --limpiando informacion vieja
-    DELETE FROM dw_account_sum WHERE fecha = fecha_consulta;
+    DELETE FROM dw_account_sum WHERE date_sum = fecha_consulta;
    -- SELECT pg_catalog.setval('dw_account_sum_id_seq', (SELECT max(id) FROM dw_account_sum), true);
     -- Insertar datos calculados en la tabla de destino desde la tabla temporal
-    INSERT INTO dw_account_sum (fecha, id_empresa, id_cuenta, credito,debito,balance)
+    INSERT INTO dw_account_sum (date_sum, company_id,company_name,account_id,account_code,account_name,credit,debit,balance)
     SELECT *
     FROM tablaTemporal;
     -- Verificar si se insertaron filas correctamente
