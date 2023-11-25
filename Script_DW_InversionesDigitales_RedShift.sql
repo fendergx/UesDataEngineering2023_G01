@@ -7,14 +7,14 @@
 
 --dimension de dimsucursal
 CREATE TABLE dimsucursal(
-    	sucursalKey int PRIMARY KEY,
+        sucursalKey int PRIMARY KEY,
         sucursalId int distkey,
         nombre varchar(150)
 )sortKey(sucursalKey);
 
 --dimension de cuenta
 CREATE TABLE dimcuenta(
-    	cuentaKey int PRIMARY KEY,
+        cuentaKey int PRIMARY KEY,
         cuentaId int distkey,
         codigoCuenta int,
         nombreCuenta varchar(250),
