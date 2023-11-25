@@ -19,7 +19,7 @@ UPDATE public.account_account SET "name"='Fixed Asset' WHERE code='151000';
 UPDATE public.account_account SET "name"='Non-current assets' WHERE code='191000';
 UPDATE public.account_account SET "name"='Current Liabilities' WHERE code='201000';
 UPDATE public.account_account SET "name"='Account Payable' WHERE code='211000';
-UPDATE public.account_account SET "name"='Bills to receive' WHERE code='211100';
+UPDATE public.account_account SET "name"='Invoice to receive' WHERE code='211100';
 UPDATE public.account_account SET "name"='Tax Received' WHERE code='251000';
 UPDATE public.account_account SET "name"='Tax Payable' WHERE code='252000';
 UPDATE public.account_account SET "name"='Non-current Liabilities' WHERE code='291000';
