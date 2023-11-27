@@ -8,11 +8,11 @@ CREATE TABLE public.dw_account_order (
 	account_name varchar(100) not null, 
 	account_type varchar(150) not null,
 	account_group varchar (15) not null, --internal group,1,2,3...
-	has_parent boolean null default null,
+	has_parent boolean not null default false,
 	parent_account_id int4 null default null,
 	parent_account_code varchar(64) null default null,
 	parent_account_name varchar(100) null default null,
-    created_at timestamp default now(),
+    created_at timestamp not null default now(),
 	CONSTRAINT dw_account_order_pk PRIMARY KEY (id)
 );
 -- public.dw_account_sum foreign keys

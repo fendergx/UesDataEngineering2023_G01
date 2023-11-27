@@ -9,7 +9,7 @@ CREATE TABLE public.dw_account_sum (
 	account_name varchar(100) not null, --nombre de la cuenta
 	credit numeric not NULL,
 	debit numeric not NULL,
-	balance numeric NULL,
+	balance numeric not NULL,
 	created_at timestamp NOT NULL default now(),
 	CONSTRAINT dw_account_sum_pk PRIMARY KEY (id)
 );
