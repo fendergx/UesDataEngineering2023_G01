@@ -10,6 +10,9 @@ CREATE TABLE public.dw_account_sum (
 	credit numeric not NULL,
 	debit numeric not NULL,
 	balance numeric not NULL,
+	initial_balance numeric NOT NULL DEFAULT 0, --saldo inicial de la cuenta en el dia
+	final_balance numeric NOT NULL DEFAULT 0, --saldo final de la cuenta en el dia
+	calculated_balance BOOLEAN NOT NULL DEFAULT FALSE,
 	created_at timestamp NOT NULL default now(),
 	CONSTRAINT dw_account_sum_pk PRIMARY KEY (id)
 );
@@ -26,4 +29,7 @@ COMMENT ON COLUMN public.dw_account_sum.account_name IS 'nombre de la cuenta aso
 COMMENT ON COLUMN public.dw_account_sum.credit IS 'suma de el total de creditos para la fecha del registro';
 COMMENT ON COLUMN public.dw_account_sum.debit IS 'suma de el total de debitos para la fecha del registro';
 COMMENT ON COLUMN public.dw_account_sum.balance IS 'suma de el total de balance diario para la fecha del registro';
+COMMENT ON COLUMN public.dw_account_sum.initial_balance IS 'Saldo inicial de la cuenta en el dia';
+COMMENT ON COLUMN public.dw_account_sum.final_balance IS 'Saldo final de la cuenta en el dia';
+COMMENT ON COLUMN public.dw_account_sum.calculated_balance IS 'Campo que valida si se han calculado los saldos iniciales y finales, al estar calculados se coloca TRUE';
 COMMENT ON COLUMN public.dw_account_sum.created_at IS 'fecha y hora de la creacion del registro, este campo se llena con la informacion del momento que se registra';
