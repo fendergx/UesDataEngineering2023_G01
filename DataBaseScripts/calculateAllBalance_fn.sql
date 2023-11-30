@@ -1,5 +1,5 @@
 --funcion para calcular los balances de todas las cuentas de todas las empresas, para todas las fechas existentes en los registros.
---requiere la funcion CalcularSaldosDiarios()
+--requiere la funcion CalcularSaldosDiarios() y de calculateAllSaldoInicialFinal() 
 CREATE OR REPLACE FUNCTION calculateAllBalance() RETURNS BOOLEAN AS $$
 DECLARE
     fecha_actual DATE;
@@ -19,6 +19,8 @@ BEGIN
                 RETURN FALSE;
         END;
     END LOOP;
+    --calcular los saldos iniciales y finales
+    PERFORM calculateAllSaldoInicialFinal();
     -- Retornar true si es exitoso
     RETURN TRUE;
 END;
