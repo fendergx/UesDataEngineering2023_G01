@@ -18,10 +18,12 @@ CREATE TABLE dimcuenta(
         cuentaId int distkey,
         codigoCuenta int,
         nombreCuenta varchar(250),
-        --codigoCuentaPadre int,
         tipoCuenta varchar(150),
         grupoCuenta varchar(150),
-        descripcionCuenta varchar(150)
+        tieneCuentaPadre varchar(2),
+        descripcionCuenta varchar(150),
+        codigoCuentaPadre varchar(10),
+        nombreCuentaPadre varchar(250)
 )sortKey(cuentaKey);
 
 --dimension de fecha
