@@ -15,13 +15,13 @@ CREATE TABLE dimsucursal(
 --dimension de cuenta
 CREATE TABLE dimcuenta(
         cuentaKey int PRIMARY KEY,
-        cuentaId int distkey,
-        codigoCuenta int,
+        cuentaId int,
+        codigoCuenta varchar(10),
         nombreCuenta varchar(250),
         tipoCuenta varchar(150),
         grupoCuenta varchar(150),
-        tieneCuentaPadre varchar(2),
         descripcionCuenta varchar(150),
+        tieneCuentaPadre varchar(5),
         codigoCuentaPadre varchar(10),
         nombreCuentaPadre varchar(250)
 )sortKey(cuentaKey);
