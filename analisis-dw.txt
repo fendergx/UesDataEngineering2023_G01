@@ -1,0 +1,7 @@
+INDICE DE BENEFICIO NETO
+Product Sales  - grupocuenta(expenses)[excluyendo cuentas hijas]
+monetariamente...
+MARGEN --> (ratio) 
+    indiceBeneficioNeto / ProductSales (ej. 1.xx)
+
+
