@@ -5,7 +5,7 @@ MARGEN --> (ratio)  {tarjetita}
     indiceBeneficioNeto / ProductSales (ej. 1.xx)
 
 ------
-MARGEN COMERCIAL
+MARGEN COMERCIAL FFFFFFFFFFF
 Precio de venta - Costo de producto 
 
 -----
