@@ -14,3 +14,14 @@ RETORNO SOBRE LA INVERSION (ROI)
 
 -----
 
+
+
+BENEFICIO NETO = Beneficio Bruto  (Ingresos venta-coste de ventas) – Impuestos  – Intereses – Depreciación – Gastos Generales
+
+Por ejemplo, supongamos que realizar una inversión inicial de 10.000€ en acciones de una empresa. Luego decides vender tus acciones tres años después por 12.000€.
+
+ROI=(12.000€-10.000€/10.000€)
+
+Lo que se ha hecho es tomar la venta final y restarle la inversión inicial con lo que se obtiene una ganancia neta de 2.000€. Después, esto se divide por el coste de la inversión.
+
+ROI=2.000€/10.000€ = 0,2
