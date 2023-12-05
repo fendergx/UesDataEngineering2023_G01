@@ -1,7 +1,16 @@
 INDICE DE BENEFICIO NETO
 Product Sales  - grupocuenta(expenses)[excluyendo cuentas hijas]
 monetariamente...
-MARGEN --> (ratio) 
+MARGEN --> (ratio)  {tarjetita}
     indiceBeneficioNeto / ProductSales (ej. 1.xx)
 
+------
+MARGEN COMERCIAL
+Precio de venta - Costo de producto 
+
+-----
+RETORNO SOBRE LA INVERSION (ROI)
+(Ingresos - Inversion)/ Inversion * 100
+
+-----
 
