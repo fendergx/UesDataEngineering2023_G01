@@ -51,8 +51,6 @@ CREATE TABLE facttransaccionfinanciera(
     fechaKey int,
     cuentaKey int,
     sucursalKey int,
-    numeroTransaccion int, --account_move
-    numeroTransaccionDetalle int, --account_move_line
     montoCargo numeric(8,2),
     montoAbono numeric(8,2),
     balance numeric(8,2),
