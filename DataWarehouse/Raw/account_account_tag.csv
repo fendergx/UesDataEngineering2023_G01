@@ -1,4 +1,0 @@
-id;color;country_id;create_uid;write_uid;name;applicability;active;tax_negate;create_date;write_date
-1;;209;1;1;Operating Activities;accounts;true;;08-07-2023;08-07-2023
-2;;209;1;1;Financing Activities;accounts;true;;08-07-2023;08-07-2023
-3;;209;1;1;Investing & Extraordinary Activities;accounts;true;;08-07-2023;08-07-2023
