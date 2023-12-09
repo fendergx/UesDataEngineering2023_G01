@@ -16,14 +16,14 @@ CREATE TABLE dimsucursal(
 CREATE TABLE dimcuenta(
         cuentaKey int PRIMARY KEY,
         cuentaId int,
-        codigoCuenta varchar(10),
-        nombreCuenta varchar(250),
+        codigoCuenta varchar(15),
+        nombreCuenta varchar(150),
         tipoCuenta varchar(150),
         grupoCuenta varchar(150),
         descripcionCuenta varchar(150),
-        tieneCuentaPadre varchar(5),
-        codigoCuentaPadre varchar(10),
-        nombreCuentaPadre varchar(250)
+        tieneCuentaPadre varchar(3),
+        codigoCuentaPadre varchar(15),
+        nombreCuentaPadre varchar(150)
 )sortKey(cuentaKey);
 
 --dimension de fecha
