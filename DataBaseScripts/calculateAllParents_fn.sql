@@ -11,7 +11,7 @@ BEGIN
     DELETE FROM dw_account_order;
     ALTER SEQUENCE public.dw_account_order_id_seq RESTART 1;
     -- Construir la nueva consulta para obtener la lista de fechas
-    query_text := 'SELECT id,code,company_id FROM account_account ORDER BY company_id,code ASC';
+    query_text := 'SELECT id,code,company_id FROM account_account WHERE company_id = 1 ORDER BY company_id,code ASC';
     -- Iterar sobre los ids de la consulta
     FOR id IN EXECUTE query_text
     LOOP
