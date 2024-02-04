@@ -16,7 +16,7 @@ BEGIN
     query_text := 'SELECT date_sum,company_id,account_id,credit,debit
                     FROM dw_account_sum 
                     WHERE calculated_balance = FALSE
-                    ORDER BY date_sum,account_id,company_id ASC';
+                    ORDER BY date_sum,company_id,account_id, ASC';
     -- Iterar sobre los registros de cuentas de sucursales.
     FOR date_sum_val, company_id_val, account_id_val, credit_val, debit_val IN EXECUTE query_text
     LOOP
